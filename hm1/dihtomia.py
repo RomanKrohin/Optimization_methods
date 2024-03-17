@@ -2,16 +2,16 @@ def f(x):
     return (1/7)*(x**7)-(x**3)+(1/2)*(x**2)-x
 
 
-def dihtomia(left, right, eps):
+def dihtomia(a, b, eps):
     iterator = 0
-    while (((right-left)/2)>eps):
-        x1 = (float(right+left)-10**(-10))/2
-        x2 = (float(right+left)+10**(-10))/2
+    while (((b-a)/2)>eps):
+        x1 = (float(b+a)-10**(-10))/2
+        x2 = (float(b+a)+10**(-10))/2
         if (f(x1)<=f(x2)):
-            right = x2
+            b = x2
         else:
-            left = x1
-        print(f"Итерация - {iterator} | x = {(left+right)/2} | y = {f((left+right)/2)}")
+            a = x1
+        print(f"Итерация - {iterator} | x = {(a+b)/2} | y = {f((a+b)/2)}")
         iterator+=1
         
     
